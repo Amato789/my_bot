@@ -9,13 +9,13 @@ async def set_commands(bot: Bot):
             description="Поточний курс валют"
         ),
         BotCommand(
-            command="currency_bank",
-            description="Поточний курс міжбанк"
+            command="weather_kyiv",
+            description="Погода Київ"
         ),
-        BotCommand(
-            command="currency_market",
-            description="Поточний курс"
-        )
+        # BotCommand(
+        #     command="currency_market",
+        #     description="Поточний курс"
+        # )
     ]
 
     await bot.set_my_commands(commands, BotCommandScopeDefault())

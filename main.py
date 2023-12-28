@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from core.config import TOKEN, ADMIN_ID
 from core.utils.commands import set_commands
-from core.handlers.basic import get_currency_exchange_nbu, get_currency_exchange_bank, get_currency_exchange
+from core.handlers.basic import get_currency_exchange_nbu, get_weather
 
 
 async def start_bot(bot: Bot):
@@ -30,8 +30,8 @@ async def start():
     dp.shutdown.register(stop_bot)
 
     dp.message.register(get_currency_exchange_nbu, Command(commands='currency_nbu'))
-    dp.message.register(get_currency_exchange_bank, Command(commands='currency_bank'))
-    dp.message.register(get_currency_exchange, Command(commands='currency_market'))
+    dp.message.register(get_weather, Command(commands='weather_kyiv'))
+
 
     try:
         await dp.start_polling(bot)
